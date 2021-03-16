@@ -1,0 +1,14 @@
+.sider {
+    float: right;
+    background-color: blue;
+    position: fixed;
+    margin-left: 1700px;
+    height: 2000px;
+    width: 200px;
+    padding: 20px 20px;
+    font-size: 20px;
+    background-color: black;
+}
+label {
+    color: green;
+}

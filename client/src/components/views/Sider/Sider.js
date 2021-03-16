@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
-import Axios from 'axios'
+import React, {useState} from 'react'
+import './Sections/Sider.css';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_action';
-import { withRouter } from 'react-router-dom';
-function LoginPage(props) {
-    
+
+function Sider(props) {
     const dispatch = useDispatch();
 
     const [Email, setEmail] = useState("")
@@ -37,16 +36,9 @@ function LoginPage(props) {
 
 
     }
-
-
     return (
-        <div style={{
-            display: 'flex', justifyContent: 'center', alignItems: 'center'
-            , width: '100%', height: '100vh'
-        }}>
-            <form style={{ display: 'flex', flexDirection: 'column' }}
-                onSubmit={onSubmitHandler}
-            >
+        <div className="sider">
+            <form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={onSubmitHandler}>
                 <label>Email</label>
                 <input type="email" value={Email} onChange={onEmailHandler} />
                 <label>Password</label>
@@ -60,4 +52,4 @@ function LoginPage(props) {
     )
 }
 
-export default withRouter(LoginPage)
+export default Sider
