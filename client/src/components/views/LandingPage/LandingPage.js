@@ -23,9 +23,11 @@ function LandingPage(props) {
     return (
         <div style={{
             display: 'flex', justifyContent: 'center', alignItems: 'center'
-            , width: '100%', height: '100vh'
+            , width: '100%', height: "70vh", flexDirection: "column"
         }}>
-            <h2>시작 페이지</h2>
+            <h1>{`공대 & 정보대`}</h1>
+            <br/>
+            <h2>{`공모전 학술교류 웹페이지`}</h2>
 
         </div>
     )

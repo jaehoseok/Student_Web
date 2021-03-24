@@ -1,17 +1,14 @@
-.menu__logo {
+/* .logo {
     float: center;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: white;
     width: 100%;
-}
+} */
 
-.menu__logo a {
+.logo a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
-    padding: 19px 20px;
-    width: 100%;
-    color: green;
+    height: 128px;
 }

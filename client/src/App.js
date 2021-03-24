@@ -7,6 +7,7 @@ import {
   BrowserRouter
 } from "react-router-dom";
 import Auth from './hoc/auth'
+import './App.css'
 //pages
 import LandingPage from './components/views/LandingPage/LandingPage'
 import LoginPage from './components/views/LoginPage/LoginPage';
@@ -20,6 +21,7 @@ import RecruitTeamPage from './components/views/RecruitTeamPage/RecruitTeamPage'
 import SuggestionPage from './components/views/SuggestionsPage/SuggestionPage';
 import SiderPage from './components/views/Sider/Sider';
 import { Layout } from 'antd';
+import Column from 'antd/lib/table/Column';
 
 function App() {
 
@@ -27,33 +29,33 @@ function App() {
 
   return (
     //fallback={(<div>Loading...</div>)}
-    <Layout >
-      <div style={{position:"fixed", width:"100%"}}>
-        <HeaderPage />
-        <Navbar />
-      </div>
+    <div className="App">
+        <div className="header"> <HeaderPage/> </div>
+        <div className="nav"> <Navbar/> </div>
 
-      <div style={{ width:"100%", height:"100%",marginTop:"170px" }}>
-        <div style={{float:"left",width:"100%",marginLeft:"-200px"}}>
-          <Router>
-              <Switch>
-                //todo 로그인이 필요한 경우: true, 로그인을 안해야 하는경우: false, 상관없는 경우: null
-                  <Route exact path="/" component={Auth(LandingPage, null)} />
-                  <Route exact path="/login" component={Auth(LoginPage, false)} />
-                  <Route exact path="/register" component={Auth(RegisterPage, false)} />
-                  <Route exact path="/introduce" component={Auth(IntroducePage, null)} />
-                  <Route exact path="/member" component={Auth(RecruitMemberPage, null)} />
-                  <Route exact path="/team" component={Auth(RecruitTeamPage, null)} />
-                  <Route exact path="/suggestion" component={Auth(SuggestionPage, true)} />
-              </Switch>
-            </Router>
+
+        <div className="left"/>
+        <div className="main">
+          <BrowserRouter>
+            <Switch>
+              //todo 로그인이 필요한 경우: true, 로그인을 안해야 하는경우: false, 상관없는 경우: null
+              <Route exact path="/" component={Auth(LandingPage, null)} />
+              <Route exact path="/login" component={Auth(LoginPage, false)} />
+                <Route exact path="/register" component={Auth(RegisterPage, false)} />
+                <Route exact path="/introduce" component={Auth(IntroducePage, null)} />
+                <Route exact path="/member" component={Auth(RecruitMemberPage, null)} />
+                <Route exact path="/team" component={Auth(RecruitTeamPage, null)} />
+                <Route exact path="/suggestion" component={Auth(SuggestionPage, true)} />
+            </Switch>
+          </BrowserRouter>
         </div>
-        <div>
-          <SiderPage/>
-        </div>
-      </div>
-      <FooterPage/>
-    </Layout>
+          
+        <div className="side">
+              <SiderPage/>
+        </div>      
+
+        <div className="footer"><FooterPage/></div>
+    </div>
   );
 }
 

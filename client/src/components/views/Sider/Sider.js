@@ -38,16 +38,22 @@ function Sider(props) {
     }
     return (
         <div className="sider">
-            <form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={onSubmitHandler}>
-                <label>Email</label>
+            <form className="login" style={{ display: 'flex', flexDirection: 'column' }} onSubmit={onSubmitHandler}>
+                <label>ID</label>
                 <input type="email" value={Email} onChange={onEmailHandler} />
                 <label>Password</label>
                 <input type="password" value={Password} onChange={onPasswordHandler} />
                 <br />
                 <button type="submit">
-                    Login
+                    로그인
+                </button>
+                <br/>
+                <button>
+                    회원가입
                 </button>
             </form>
+            <div className="mid"/>
+            <div className="notice">알람</div>
         </div>
     )
 }
